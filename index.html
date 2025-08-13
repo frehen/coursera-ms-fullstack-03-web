@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Basic HTML starter template with navigation">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <h1>Coursera Sample Website</h1>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#about" class="active">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am a developer and I have created this sample web site for the graded asignment of Coursera course
+                "Microsoft Full-Stack Developer Professional Certificate: Microsoft Introduction to Web Development".
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2 class="projects-heading">Projects</h2>
+            <div id="projects-grid">
+                <article class="project">
+                    <h3>Project One</h3>
+                    <p>This is a sample text for Project One. An actual description would highlight the main idea and
+                        purpose of the
+                        project. Project One has a longer description than the two other projects presented on the
+                        website. This is just to
+                        demonstrate projects with different descriptios lenghts. One lager screen sizes where projects
+                        are shown
+                        in a 2D-grid, the images should align with each other.
+                    </p>
+                    <figure>
+                        <img src="./project-1-600x400.png"
+                            alt="Sample image for Project One showing a man using a laptop">
+                        <figcaption>Sample image for Project One</figcaption>
+                    </figure>
+                </article>
+
+                <article class="project">
+                    <h3>Project Two</h3>
+                    <p>This is a brief sample description of Project Two. An actual description would provide an
+                        overview of the project's goals and
+                        features.</p>
+                    <figure>
+                        <img src="./project-2-600x400.png"
+                            alt="Sample image of Project Two showing a laptop on a table">
+                        <figcaption>Sample image for Project Two</figcaption>
+                    </figure>
+                </article>
+
+                <article class="project">
+                    <h3>Project Three</h3>
+                    <p>This is a brief sample description of Project Three. An actual description would provide an
+                        overview of the project's goals and
+                        features.</p>
+                    <figure>
+                        <img src="./project-3-600x400.png" alt="Sample of Project Three showing a landscape with some trees, water and mountains">
+                        <figcaption>Sample image for Project Three</figcaption>
+                    </figure>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <p>A set of sample skills I have provided for this page:</p>
+            <ul>
+                <li>Architect, Lead, and Fullstack Developer with over 20 years of broad experience in Java and .NET
+                    platforms.</li>
+                <li>Ph.D. in Machine Learning and M.Sc. in Computer Science/Mathematics.</li>
+                <li>Experience developing web clients in React and Angular.</li>
+                <li>Experience with Kubernetes DevOps on Azure and migration from on-premises to cloud.</li>
+                <li>Google Cloud Certified – Professional Cloud Architect and Professional Data Engineer.</li>
+                <li>Experience with cloud-native platform development in the cloud, and locally via Minikube/KinD.</li>
+                <li>Experience with Kafka and development of microservices based on event-driven architecture/change
+                    logs.</li>
+                <li>Developed a Zero Trust OAuth2/OIDC authentication solution for Posten Bring’s web portal.</li>
+                <li>Experience with live and batch data conversion during migration from old to new systems.</li>
+                <li>Development of APIs and services via REST and web services for Java and .NET.</li>
+                <li>Experience developing digital document signing solutions and authentication via BankID.</li>
+                <li>Extensive experience with Oracle/PostgreSQL databases, including schema design and optimization.
+                </li>
+                <li>Extensive experience with digital maps and geospatial systems.</li>
+                <li>Platforms: Web, Azure, Google Cloud, AWS, Kubernetes, Docker, Linux, Windows, Mac.</li>
+                <li>Technologies: Java, Kotlin, Scala, C++, C#, Python, TypeScript, JavaScript, HTML/CSS, Spring Boot,
+                    Spring Security, Spring Authorization Server, Spring Cloud Gateway, J2EE, .NET Frameworks, React,
+                    Angular, Vite, Maven, Gradle, JUnit, Playwright, CQRS, AxonServer, Akka, WebLogic, Quarkus, Jetty,
+                    REST, JAX-WS/CXF, .NET/WCF, OAuth2/OIDC, JWT, AD/LDAP, BankID, BIDXML, PAdES, JDBC, Hibernate, JPA,
+                    Nginx, Kafka, RabbitMQ, OpenSearch, Apache Spark, Oracle, PostgreSQL, SQL, GoldenGate replication,
+                    Flyway, Liquibase, BigQuery, Kafka Schema Registry/Avro, Kafka Streams, WFS, WMS, GeoServer,
+                    Git/GitHub, Jenkins, Terraform, Packer, Datadog, Grafana/Prometheus, Helm, Argo/Flux CD, Ingress,
+                    KinD, K3D, Scrum, Lean, TDD, DDD, CI/CD, IaC, JIRA, Trello, Confluence.</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Form</h2>
+            <p>I would love to hear from you.</p>
+
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="topic">Topics</label>
+                    <textarea id="topic" name="topic" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 My Website. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

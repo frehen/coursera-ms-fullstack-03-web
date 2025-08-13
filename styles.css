@@ -1,0 +1,253 @@
+/* === GLOBAL SETTINGS === */
+html {
+    scroll-behavior: smooth;
+    /* Smooth scrolling for anchor links */
+}
+
+/* === CSS RESET === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* === CUSTOM STYLES === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+
+header {
+    background-color: #0078d4;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    /* keeps the header fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-menu li a {
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-menu li a.active {
+    background-color: white;
+    color: #0078d4;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    /* Add padding to main to avoid content being hidden behind fixed header */
+    padding: calc(1rem + 80px) 1rem 1rem 1rem;
+    /* 80px ≈ header height, actual value calculated in JavaScript */
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Section Layout */
+main section {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    scroll-margin-top: 100x;
+    /* Match or slightly exceed your header height */
+}
+
+main section h2 {
+    margin-bottom: 1rem;
+    color: #0078d4;
+}
+
+main section ul {
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 1em;
+}
+
+main section ul li {
+    margin-bottom: 1em;
+}
+
+/* Projects Section Layout */
+#projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* gap: 2rem; */
+    gap: 1rem;
+}
+
+.project {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.project h3 {
+    margin-bottom: 0.5rem;
+    color: #0078d4;
+}
+
+.project p {
+    margin-bottom: 1rem;
+}
+
+.project figure {
+    margin: 0;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+}
+
+.project figcaption {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+
+.form-group {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: 0 0 0 3px rgba(93, 93, 255, 0.2);
+    background-color: #fff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0078d4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+    background-color: #4a4aff;
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+
+/* Two-column layout with equal height cards on larger screens */
+@media (min-width: 768px) {
+    #projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+        /* All rows get equal height */
+        gap: 2rem;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+
+    .project figure {
+        margin-top: auto;
+        /* Keeps figure aligned at the bottom */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
