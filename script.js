@@ -27,7 +27,7 @@ function isAtPageBottom(offset = 0) {
     return doc.scrollHeight <= (window.scrollY + doc.clientHeight + offset)
 }
 
-window.addEventListener("scroll", () => {
+function syncMenuSelection() {
     // Account for sticky header. Set location for menu selection to 32px below header. 
     const scrollPosition = window.scrollY + header.offsetHeight + 32;
     let current = sections[0].getAttribute("id"); // Default to first section
@@ -53,7 +53,12 @@ window.addEventListener("scroll", () => {
             link.classList.add("active");
         }
     });
-});
+}
+
+// Run on page load
+syncMenuSelection();
+
+window.addEventListener("scroll", syncMenuSelection);
 
 // === Hamburger Menu ===
 const hamburger = document.querySelector('.hamburger');
