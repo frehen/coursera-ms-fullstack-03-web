@@ -22,6 +22,11 @@ updateHeaderOffsets();
 // Optional: run on window resize in case header height changes
 window.addEventListener("resize", updateHeaderOffsets);
 
+function isAtPageBottom(offset = 0) {
+    const doc = document.documentElement;
+    return doc.scrollHeight <= (window.scrollY + doc.clientHeight + offset)
+}
+
 window.addEventListener("scroll", () => {
     // Account for sticky header. Set location for menu selection to 32px below header. 
     const scrollPosition = window.scrollY + header.offsetHeight + 32;
@@ -34,9 +39,11 @@ window.addEventListener("scroll", () => {
         }
     });
 
-    // Select the last section when it is present in the upper (1/4) part of the screen
+    // Select the last section when the bottom of page has been almost reached. 
+    // The last section might not be able to scroll all the way to the top of the page.
+    const pageBottomOffset = 50;
     const lastSection = sections[sections.length - 1];
-    if (scrollPosition >= lastSection.offsetTop - window.innerHeight / 4) {
+    if (isAtPageBottom(pageBottomOffset)) {
         current = lastSection.getAttribute("id");
     }
 
