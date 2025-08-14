@@ -1,4 +1,4 @@
-// === Scroll Spy Feature ===
+// === Scroll spy feature to highlight section displayed on screen in Menu ===
 const sections = document.querySelectorAll("main section");
 const navLinks = document.querySelectorAll(".nav-menu a");
 const header = document.getElementById("header");
@@ -23,7 +23,7 @@ updateHeaderOffsets();
 window.addEventListener("resize", updateHeaderOffsets);
 
 window.addEventListener("scroll", () => {
-    // Account for sticky header. Set focus for menu selection 32 px under header. 
+    // Account for sticky header. Set location for menu selection to 32px below header. 
     const scrollPosition = window.scrollY + header.offsetHeight + 32;
     let current = sections[0].getAttribute("id"); // Default to first section
 
@@ -34,11 +34,10 @@ window.addEventListener("scroll", () => {
         }
     });
 
-    // Select last section when present in upper quater of screen
-
-    const lastSection = sections[sections.length-1];
-    if (scrollPosition >= lastSection.offsetTop - window.innerHeight/4) {
-       current = lastSection.getAttribute("id");  
+    // Select the last section when it is present in the upper (1/4) part of the screen
+    const lastSection = sections[sections.length - 1];
+    if (scrollPosition >= lastSection.offsetTop - window.innerHeight / 4) {
+        current = lastSection.getAttribute("id");
     }
 
     navLinks.forEach(link => {
@@ -49,7 +48,32 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// Contact form 
+// === Hamburger Menu ===
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+// Function to toggle the menu's active state
+function toggleMenu() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+}
+
+// Add a click event listener to the hamburger button
+hamburger.addEventListener('click', toggleMenu);
+
+// Optional: Close the menu when a link is clicked on mobile
+document.querySelectorAll('.nav-item a').forEach(item => {
+    item.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            // Check if the menu is active before closing
+            if (navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        }
+    });
+});
+
+// === Contact form ==== 
 const contactForm = document.getElementById('contact-form');
 
 // Add an event listener for the form submission

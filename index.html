@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Basic HTML starter template with navigation">
-    <title>My Website</title>
+    <title>Demo Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
     <header id="header">
-        <h1>Coursera Sample Website</h1>
-        <nav>
+        <nav class="navbar">
+            <a href="#" class="navbar-logo">My Site</a>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul class="nav-menu">
-                <li><a href="#about" class="active">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="nav-item"><a href="#about">About Me</a></li>
+                <li class="nav-item"><a href="#projects">Projects</a></li>
+                <li class="nav-item"><a href="#skills">Skills</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -27,8 +31,9 @@
         <section id="about">
             <h2>About Me</h2>
             <p>
-                I am a developer and I have created this sample web site for the graded asignment of Coursera course
-                "Microsoft Full-Stack Developer Professional Certificate: Microsoft Introduction to Web Development".
+                I have created this demo web site for the graded asignment of Coursera course
+                <em>Microsoft Full-Stack Developer Professional Certificate: Microsoft Introduction to Web Development</em>.
+                The site uses basic CSS styling and JavaScript to achive a responseive layout.
             </p>
         </section>
 
